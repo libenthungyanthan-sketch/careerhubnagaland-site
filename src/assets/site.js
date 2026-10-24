@@ -60,7 +60,7 @@
       var msg = document.createElement('p');
       msg.className = 'form-error';
       msg.setAttribute('role', 'alert');
-      msg.style.color = '#8c3f10';
+      msg.style.color = '#8b2f1f';
       msg.style.fontWeight = '700';
       var label = bad.type === 'checkbox' ? 'Please tick the consent box to send your enquiry.' :
         'Please complete: ' + ((form.querySelector('label[for="' + bad.id + '"]') || {}).textContent || 'this field').replace('*', '').trim() + '.';

@@ -121,7 +121,7 @@ def render_header(active):
     return f"""<a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="/"><img src="/assets/img/logo-horizontal.webp" width="781" height="200" alt="Career Hub Nagaland, home"></a>
+    <a class="brand" href="/"><img src="/assets/img/logo-horizontal.webp" width="804" height="200" alt="Career Hub Nagaland, home"></a>
     <nav class="nav" aria-label="Main">{links_html}<a class="btn btn-primary" href="/enquire/">Book a free call</a></nav>
     <details class="menu"><summary>Menu</summary><nav aria-label="Main">{links_html}<a href="/enquire/">Book a free call</a></nav></details>
   </div>

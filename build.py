@@ -30,7 +30,7 @@ UPDATED = "24 October 2026"
 PAY = {
     "assessment": "https://rzp.io/rzp/deibG8e",
     "counselling": "https://rzp.io/rzp/Quu4cOnr",
-    "group": "",
+    "group": "https://rzp.io/rzp/tTCuKIJ",
     "clarity": "https://rzp.io/rzp/4FDijUy3",
     "readiness": "https://rzp.io/rzp/dLOta7c",
     "readiness-balance": "https://rzp.io/rzp/ffnprXR",

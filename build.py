@@ -61,6 +61,8 @@ def org_graph():
                 "name": NAME,
                 "description": "Career counselling practice in Dimapur, Nagaland, for students in Grades 8–12 and graduates. An initiative of ICATAN.",
                 "url": f"{SITE}/",
+                "logo": f"{SITE}/assets/img/icon-512.png",
+                "image": f"{SITE}/assets/img/share.jpg",
                 "telephone": PHONE,
                 "email": EMAIL,
                 "address": {
@@ -79,6 +81,7 @@ def org_graph():
                 "@id": f"{SITE}/about/#person",
                 "name": "Dr. Emmanuel L. Yanthan",
                 "jobTitle": "Lead Career Counsellor",
+                "image": f"{SITE}/assets/img/counsellor-640.jpg",
                 "worksFor": {"@id": f"{SITE}/#org"},
                 "hasCredential": {
                     "@type": "EducationalOccupationalCredential",
@@ -118,7 +121,7 @@ def render_header(active):
     return f"""<a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="/">Career Hub Nagaland<span>Career counselling in Dimapur</span></a>
+    <a class="brand" href="/"><img src="/assets/img/logo-horizontal.webp" width="781" height="200" alt="Career Hub Nagaland, home"></a>
     <nav class="nav" aria-label="Main">{links_html}<a class="btn btn-primary" href="/enquire/">Book a free call</a></nav>
     <details class="menu"><summary>Menu</summary><nav aria-label="Main">{links_html}<a href="/enquire/">Book a free call</a></nav></details>
   </div>
@@ -212,7 +215,15 @@ def render_page(meta, body):
 <meta property="og:title" content="{html.escape(title)}">
 <meta property="og:description" content="{html.escape(desc)}">
 <meta property="og:url" content="{canonical}">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="{SITE}/assets/img/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Career Hub Nagaland logo">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<meta name="theme-color" content="#3a2d28">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Literata:opsz,wght@7..72,600&display=swap" rel="stylesheet">

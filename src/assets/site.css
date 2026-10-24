@@ -61,7 +61,7 @@ p, ul, ol { margin: 0 0 1em; }
 .site-header { background: var(--paper); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 50; }
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 72px; }
 .brand { display: block; line-height: 0; }
-.brand img { height: 46px; width: auto; }
+.brand img { height: 54px; width: auto; }
 .nav { display: flex; align-items: center; gap: 22px; }
 .nav a { text-decoration: none; font-size: 1rem; color: var(--text); padding: 6px 0; border-bottom: 2px solid transparent; }
 .nav a[aria-current="page"] { border-bottom-color: var(--ink); color: var(--ink); font-weight: 700; }
@@ -192,7 +192,7 @@ fieldset.field { border: 0; padding: 0; margin: 0 0 22px; }
   .footer-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 860px) {
-  .brand img { height: 38px; }
+  .brand img { height: 46px; }
   .nav { display: none; }
   .menu { display: block; position: relative; }
   .menu summary { list-style: none; cursor: pointer; font-weight: 700; color: var(--ink); border: 2px solid var(--ink); border-radius: var(--radius); padding: 8px 14px; }

@@ -7,7 +7,7 @@ Pages live in src/pages/*.html. The first line of each page is
 Placeholders in page bodies: {{WA:message|source}}, {{PHONE}}, {{TEL}},
 {{EMAIL}}, {{ADDRESS}}, {{FAQ}}.
 """
-import html, json, os, re, shutil, sys, urllib.parse
+import hashlib, html, json, os, re, shutil, sys, urllib.parse
 from pathlib import Path
 
 ROOT = Path(__file__).parent
@@ -152,6 +152,10 @@ def render_footer(cta_src):
 </div>"""
 
 
+def asset_version(name):
+    return hashlib.sha1((SRC / "assets" / name).read_bytes()).hexdigest()[:8]
+
+
 def render_page(meta, body):
     path = meta["path"]
     canonical = SITE + path
@@ -201,7 +205,7 @@ def render_page(meta, body):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Literata:opsz,wght@7..72,600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/site.css?v={asset_version('site.css')}">
 {ld_html}
 {ga}
 </head>
@@ -211,7 +215,7 @@ def render_page(meta, body):
 {body}
 </main>
 {render_footer(meta.get('cta', 'web'))}
-<script src="/assets/site.js" defer></script>
+<script src="/assets/site.js?v={asset_version('site.js')}" defer></script>
 </body>
 </html>
 """

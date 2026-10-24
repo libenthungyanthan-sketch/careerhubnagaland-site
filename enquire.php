@@ -4,7 +4,7 @@
 declare(strict_types=1);
 date_default_timezone_set('Asia/Kolkata');
 
-const ENQUIRY_TO = 'emmanuelyanthan@rediffmail.com'; // change to hello@careerhubnagaland.in once that mailbox exists
+const ENQUIRY_TO = 'leadcounsellor@careerhubnagaland.in';
 const THANKS_URL = '/enquire/thanks/';
 
 if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {

@@ -26,6 +26,16 @@ ADDRESS = "Evita Building, Burma Camp, Dimapur, Nagaland"
 GA4_ID = ""                                 # e.g. G-XXXXXXX; leave empty until the property exists
 UPDATED = "24 October 2026"
 
+# Razorpay Payment Pages (rzp.io short links). Leave a value empty to fall back to the enquiry form.
+PAY = {
+    "assessment": "https://rzp.io/rzp/deibG8e",
+    "counselling": "https://rzp.io/rzp/Quu4cOnr",
+    "group": "",
+    "clarity": "https://rzp.io/rzp/4FDijUy3",
+    "readiness": "https://rzp.io/rzp/dLOta7c",
+    "readiness-balance": "https://rzp.io/rzp/ffnprXR",
+}
+
 NAV = [
     ("home", "/", "Grades 8–12"),
     ("graduates", "/college-and-graduates-job-readiness/", "Graduates"),
@@ -181,6 +191,7 @@ def render_page(meta, body):
         return html.escape(wa(msg, src))
 
     body = re.sub(r"\{\{WA:([^}]+)\}\}", sub, body)
+    body = re.sub(r"\{\{PAY:([a-z-]+)\}\}", lambda m: PAY.get(m.group(1)) or f"/enquire/?service={m.group(1)}", body)
     body = (body.replace("{{PHONE}}", PHONE).replace("{{TEL}}", TEL)
                 .replace("{{EMAIL}}", EMAIL).replace("{{ADDRESS}}", ADDRESS)
                 .replace("{{UPDATED}}", UPDATED))

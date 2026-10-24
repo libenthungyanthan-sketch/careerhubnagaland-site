@@ -121,7 +121,7 @@ def render_header(active):
     return f"""<a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="/"><img src="/assets/img/logo-horizontal.webp" width="804" height="200" alt="Career Hub Nagaland, home"></a>
+    <a class="brand" href="/"><img src="/assets/img/logo-horizontal.webp?v={asset_version('img/logo-horizontal.webp')}" width="804" height="200" alt="Career Hub Nagaland, home"></a>
     <nav class="nav" aria-label="Main">{links_html}<a class="btn btn-primary" href="/enquire/">Book a free call</a></nav>
     <details class="menu"><summary>Menu</summary><nav aria-label="Main">{links_html}<a href="/enquire/">Book a free call</a></nav></details>
   </div>
@@ -194,6 +194,7 @@ def render_page(meta, body):
         return html.escape(wa(msg, src))
 
     body = re.sub(r"\{\{WA:([^}]+)\}\}", sub, body)
+    body = re.sub(r'(/assets/img/[\w.-]+\.(?:webp|jpg|png))', lambda m: m.group(1) + "?v=" + asset_version(m.group(1)[8:]), body)
     body = re.sub(r"\{\{PAY:([a-z-]+)\}\}", lambda m: PAY.get(m.group(1)) or f"/enquire/?service={m.group(1)}", body)
     body = (body.replace("{{PHONE}}", PHONE).replace("{{TEL}}", TEL)
                 .replace("{{EMAIL}}", EMAIL).replace("{{ADDRESS}}", ADDRESS)
